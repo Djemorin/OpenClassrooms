@@ -4,13 +4,17 @@ require 'connect.php';
 $pseudo = htmlspecialchars($_POST['pseudo']);
 $message = htmlspecialchars($_POST['message']);
 
+
+
 if(!empty($pseudo) AND !empty($message)){
-	$req = $bdd->prepare('INSERT INTO chat(pseudo, message) VALUES(:pseudo, :message)');
+	$req = $bdd->prepare('INSERT INTO chat(date_post, pseudo, message) VALUES(NOW(), :pseudo, :message)');
 	$req->execute(array(
+		
 		'pseudo'=>$pseudo,
 		'message'=>$message
 		));
-	header('location: minichat.php');
+	header("location: minichat.php?pseudo=$pseudo");
 }else{
-	echo 'Vous n\'avez pas tout entré comme il faut';
+	header("location: minichat.php?pseudo=$pseudo");
+	// echo 'Vous n\'avez pas tout entré comme il faut';
 }

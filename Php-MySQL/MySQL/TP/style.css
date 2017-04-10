@@ -7,6 +7,66 @@ body{
 	color: white;
 }
 
+article{
+	display: block;
+	width: 50%;
+	height: auto;
+	border: 5px ridge red;
+}
+
+form{
+	display: block;
+	width: 100%;
+	height: auto;
+	background-color: rgba(250, 50, 50, 0.9);
+	text-align: center;
+	line-height: 100%;
+
+}
+
+.entree{
+	display: table;
+	width: 100%;
+}
+
+.formleft{
+	width: 20%;
+	float: left;
+}
+
+.formright{
+	width: 80%;
+	float: left;
+}
+
+input{
+	width: 99%;
+}
+
+button{
+	width: 100%;
+	background-color: lightgreen;
+	margin: 1% 0;
+	font-weight: bolder;
+}
+
+label{
+	font-size: 100%;
+}
+
+#chat{
+	display: block;
+	width: 100%;
+	height: auto;
+	line-height: 100%;
+	background-color: rgba(15, 15, 15, 0.6);
+	color: aqua;
+}
+
+span{
+	color: lightgreen;
+}
+
 strong{
 	color: red;
 	text-transform: uppercase;
@@ -14,36 +74,4 @@ strong{
 
 em{
 	color: white;
-}
-
-form{
-	z-index: 100;
-	margin: 0.1%;
-	display: table;
-	width: 48.5%;
-	height: auto;
-	/*padding-left: 1.5%;*/
-	background-color: rgba(50, 50, 50, 1);
-	padding: 0.1% 1.5%;
-	text-align: center;
-	border: 5px ridge white;
-	position: fixed;
-}
-
-input{
-	width: 50%;
-}
-
-.chat{
-	position: absolute;
-	position: fixed;
-	overflow: scroll;
-	top: 18%;
-	display: table;
-	width: 50%;
-	border: 5px ridge grey;
-	line-height: 0.1%;
-	padding-left: 1.5%;
-	background-color: rgba(15, 15, 15, 0.6);
-	color: aqua;
 }
