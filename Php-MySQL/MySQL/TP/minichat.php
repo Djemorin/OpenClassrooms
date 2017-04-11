@@ -4,6 +4,7 @@
 		<title>Minichat</title>
 		<meta charset="utf-8">
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<!-- <meta http-equiv="refresh" content="10"> -->
 	</head>
 
@@ -36,7 +37,7 @@
 				
 			</form>
 		
-			<div id="chat">
+			<div id="messages">
 				<?php
 
 					require'connect.php';
@@ -52,20 +53,11 @@
 				?>
 			</div>
 		</article>
-		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js">
-			function refresh() {
-				$.ajax({
-				    url: "minichat.php", // Ton fichier ou se trouve ton chat
-				    success:
-				        function(retour){
-				        $("#chat").html(retour); // rafraichi toute ta DIV "bien sur il lui faut un id "
-				    }
-				});
-				 
-				}
-				 
-				setInterval(refresh(), 2000) // Répète la fonction toutes les 10 sec
+	</body>	
+	<script type="text/javascript">
+		setInterval('load_messages()', 2000);
+		function load_messages(){
+			$('#messages').load('refresh.php');
+		}
 	</script>
-	</body>
-	
 </html>
